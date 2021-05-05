@@ -28,7 +28,7 @@ A new  preventative vaccine (covid91) is under test in clinical trials. Given th
 
 # Methods
 
-The first step is isolating the subpopulations
+
 ```{r}
 maledata<-filter(FinalData, sex=="guy")
 maledata$sex <- as.factor(maledata$sex)
@@ -79,7 +79,9 @@ The Pearson's Chi-squared test shows that the p-value is 0.0006, which is so sma
 
 $H_0$ the null hypothesis shows that the vaccine makes no difference in the male population as to whether you contract Covid-19 or not.
 
-$H_a$ the alternative hypothesis is that the vaccine in fact does make a difference in whether or not a male contracts Covid-19. Therefore we reject thhe null hypothesis.
+$H_a$ the alternative hypothesis is that the vaccine in fact does make a difference in whether or not a male contracts Covid-19. Therefore we reject the null hypothesis.
+
+The Fisher's Exact Test shows that the odds ratio is  1.47:1, when taking the dss ratio and computing it into a percent of effectiveness by using the formula O/(1+O)*100 you get 59.5% effectiveness.
 
 # Females
 
