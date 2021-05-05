@@ -115,7 +115,7 @@ basicCC <- ggplot(Females,aes(x=infected,y=prcnt*100,fill=treatment))
 basicCC + geom_bar(stat="identity", position = "dodge")
 ```
 
-
+Based on the bar plot it shows that out of approximately 607 Females who were infected with Covid-19 were about 32% who had Covid were given the drug and about 66% that were infected got the placebo.
 
 ## Numerical summary
 
@@ -126,7 +126,7 @@ colPerc(table2)
 print(table2)
 ```
 
-
+The table shows that about 607 females were infected with Covid-19 out of approximately 8,600 females in the study. According to the table 4.44% of the Females who received the drug got Covid, and 8.67% of the Females who received the placebo contracted Covid. Lastly the table shows that Females who got the vaccine were about 67% less likely to contract Covid-19, this shows that the vaccine is effective for Females.
 
 
 ## Inferential Results
@@ -137,9 +137,15 @@ chisqtestGC(table2)
 fisher.test(table2)
 ```
 
-The vaccine is 67% effective in Females.
+The Pearson's Chi-squared test shows that the p-value is 0.0000000000000002, which is so small that it is highly unlikely that the results are by chance. 
 
+$H_0$ the null hypothesis shows that the vaccine makes no difference in the Female population as to whether you contract Covid-19 or not.
 
+$H_a$ the alternative hypothesis is that the vaccine in fact does make a difference in whether or not a Female contracts Covid-19. Therefore we reject the null hypothesis.
+
+The Fisher's Exact Test shows that the odds ratio is 2.05:1, when taking the dss ratio and computing it into a percent of effectiveness by using the formula O/(1+O)*100 you get 67% effectiveness.
+
+Ultimately the vaccine is 67% effective in the Female population, which is absolutely effective.
 
 # LGBTQ
 
@@ -169,7 +175,7 @@ basicCC <- ggplot(LGBTQ,aes(x=infected,y=prcnt*100,fill=treatment))
 basicCC + geom_bar(stat="identity", position = "dodge")
 ```
 
-
+Based on the bar plot it shows that out of approximately 116 LGBTQ who were infected with Covid-19 were about 70% who had Covid were given the drug and about 29% that were infected got the placebo.
 
 ## Numerical summary
 
@@ -180,7 +186,7 @@ colPerc(table3)
 print(table3)
 ```
 
-
+The table shows that about 116 LGBTQ were infected with Covid-19 out of approximately 2,040 LGBTQ in the study. According to the table 70% of the LGBTQ who received the drug got Covid, and 29% of the LGBTQ who received the placebo contracted Covid. Lastly the table shows that LGBTQ who got the vaccine were about 29% more likely to contract Covid-19, this shows that the vaccine is not effective for LGBTQ population.
 
 
 ## Inferential Results
@@ -191,7 +197,16 @@ chisqtestGC(table3)
 fisher.test(table3)
 ```
 
-The vaccine is not effective in the LGBTQ population, it is only 29% effective.
+The Pearson's Chi-squared test shows that the p-value is 0.0000057, which is so small that it is highly unlikely that the results are by chance. 
+
+$H_0$ the null hypothesis shows that the vaccine makes no difference in the LGBTQ population as to whether you contract Covid-19 or not.
+
+$H_a$ the alternative hypothesis is that the vaccine in fact does make a difference in whether or not a LGBTQ contracts Covid-19. Therefore we reject the null hypothesis.
+
+The Fisher's Exact Test shows that the odds ratio is 0.40:1, when taking the odds ratio and computing it into a percent of effectiveness by using the formula O/(1+O)*100 you get 29% effectiveness.
+
+Ultimately the vaccine is 29% effective in the LGBTQ population, which is absolutely ineffective in the LGBTQ population.
+
 
 # Drug Users
 
@@ -221,7 +236,7 @@ basicCC <- ggplot(Druggies,aes(x=infected,y=prcnt*100,fill=treatment))
 basicCC + geom_bar(stat="identity", position = "dodge")
 ```
 
-
+Based on the bar plot it shows that out of approximately 117 DrugUsers who were infected with Covid-19 were about 32% who had Covid were given the drug and about 66% that were infected got the placebo.
 
 ## Numerical summary
 
@@ -232,7 +247,7 @@ colPerc(table4)
 print(table4)
 ```
 
-
+The table shows that about 117 DrugUsers were infected with Covid-19 out of approximately 2,280 DrugUsers in the study. According to the table 33.3% of the DrugUsers who received the drug got Covid, and 66.6% of the DrugUsers who received the placebo contracted Covid. Lastly the table shows that DrugUsers who got the vaccine were about 64% less likely to contract Covid-19, this shows that the vaccine is effective for DrugUsers.
 
 
 ## Inferential Results
@@ -243,6 +258,17 @@ chisqtestGC(table4)
 fisher.test(table4)
 ```
 
-The vaccine is 64% effective in the Druggie population.
+The Pearson's Chi-squared test shows that the p-value is 0.002273, which is so small that it is highly unlikely that the results are by chance. 
+
+$H_0$ the null hypothesis shows that the vaccine makes no difference in the DrugUsers population as to whether you contract Covid-19 or not.
+
+$H_a$ the alternative hypothesis is that the vaccine in fact does make a difference in whether or not a DrugUsers contracts Covid-19. Therefore we reject the null hypothesis.
+
+The Fisher's Exact Test shows that the odds ratio is 1.83:1, when taking the odds ratio and computing it into a percent of effectiveness by using the formula O/(1+O)*100 you get 64% effectiveness.
+
+Ultimately the vaccine is 64% effective in the DruugUsers population, which is absolutely effective.
 
 # Discussion and Conclusion
+
+When looking at the 4 populations Males, Females, LGBTQ, and DrugUsers. We found that the 2 populations that had the highest rate of effectiveness were the Females at 67% and the DrugUsers at 64%. Both the Male population and the LGBTQ population showed that the vaccine was not beneficial to them and were ineffective in protecting them from contracting Covid-19. The Males had a 40% effectiveness while the LGBTQ had a 29% effectiveness, which is not effective at all.
+
