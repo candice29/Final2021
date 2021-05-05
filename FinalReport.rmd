@@ -96,7 +96,7 @@ Femaledata$sex <- as.factor(Femaledata$sex)
 ## Bar Plot
 
 ```{r}
-Females <- Femaledata %>% group_by(infected,treatment) %>% summarize(count=n()) %>% mutate(prcnt=count/sum(count))
+Females <- Femaledata %>% group_by(infected, treatment) %>% summarize(count=n()) %>% mutate(prcnt=count/sum(count))
 
 
 # the group_by followed by summarize(count=n())
@@ -110,35 +110,30 @@ basicCC <- ggplot(Females,aes(x=infected,y=prcnt*100,fill=treatment))
 basicCC + geom_bar(stat="identity", position = "dodge")
 ```
 
-Based on the bar plot it shows that out of the approximate 340 males who were infected with Covid-19, about 57% of the males who had Covid were given the drug and about 43% that were infected got the placebo.
+
 
 ## Numerical summary
 
 ```{r}
-table1 <- xtabs(~infected + treatment, data=Femaledata)
-rowPerc(table1)
-colPerc(table1)
-print(table1)
+table2 <- xtabs(~infected + treatment, data=Femaledata)
+rowPerc(table2)
+colPerc(table2)
+print(table2)
 ```
 
-The table shows that about 340 males were infected with Covid-19 out of approximately 10,400 males in the study. According to the table 3.72% of the males who received the drug got Covid, and 2.55% of the males who received the placebo contracted Covid. It doesn't appear that drug was effective in this study because the drug is supposed to prevent the infection of Covid, and the table shows that males who got the vaccine were about 50% more likely to contract Covid-19.
+
 
 
 ## Inferential Results
 
 ```{r}
-chisq.test(table1)
-chisqtestGC(table1)
-fisher.test(table1)
+chisq.test(table2)
+chisqtestGC(table2)
+fisher.test(table2)
 ```
 
-The Pearson's Chi-squared test shows that the p-value is 0.0006, which is so small that it is highly unlikely that the results are by chance. 
+The vaccine is 67% effective in Females.
 
-$H_0$ the null hypothesis shows that the vaccine makes no difference in the male population as to whether you contract Covid-19 or not.
-
-$H_a$ the alternative hypothesis is that the vaccine in fact does make a difference in whether or not a male contracts Covid-19. Therefore we reject the null hypothesis.
-
-The Fisher's Exact Test shows that the odds ratio is 1.47:1, when taking the dss ratio and computing it into a percent of effectiveness by using the formula O/(1+O)*100 you get 59.5% effectiveness.
 
 
 # LGBTQ
